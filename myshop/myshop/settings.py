@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -131,7 +133,13 @@ CART_SESSION_ID = 'cart'
 
 # Email settings
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'your_email@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'evgeniikatunkin@gmail.com'
+EMAIL_HOST_PASSWORD = 'qckcravwjwtikzeu'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# Stripe settings
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51NBDjcC4XaSuqGtHLnHwd0Gux6fnSNI1kv2OQIDwIkVc6r2npuNFStxm5mnV2UjcuBOCQysznHfNm8Y1Tq1BodBv00q5VIxvSD'
+STRIPE_SECRET_KEY = 'sk_test_51NBDjcC4XaSuqGtH5w2DHW68AQAQ6PZCYOQsaK1FKuc8hqByw3iOWGMW63VW5INdt4pmstpW5P1B9ntU1EgcTapJ00TRPJ9yo1'
+STRIPE_API_VERSION = '2022-11-15'
+STRIPE_WEBHOOK_SECRET = 'whsec_0822bfe12b6699e01b7d5d0442138c7e54f53a23deffc9550d0b0730cadba7cd'
